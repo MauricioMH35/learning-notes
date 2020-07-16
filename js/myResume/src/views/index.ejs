@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Meu Currículo</title>
+
+   <link rel="stylesheet" href="/styles/reset.css" type="text/css">
+   <link rel="stylesheet" href="/styles/main.css" type="text/css">
+</head>
+<body>
+
+   <header class="box-shadow">
+      <!-- DATA USER --><div style="width: 45%; padding: 1cm 0 1cm 2cm;">
+         <!-- NAME AND BIRTH --><div>
+            <h1><%= name %></h1>
+            <h4><%= birth %></h4>
+         </div><!-- NAME AND BIRTH -->
+
+         <!-- EMAIL -->
+         <div style="margin-top:12pt; display:flex; justify-content:left; align-items:center;">
+         <% emails.map(emails => { %> 
+            <% if(emails.type === 'trabalho') { %> 
+               <!-- SVG -->
+               <p title="Email"><?xml version="1.0"?>
+               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve" width="20px" height="20px" class=""><g><g><g><path d="M460.8,68.267H17.067l221.867,182.75L463.309,68.779C462.488,68.539,461.649,68.368,460.8,68.267z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g><g><g><path d="M249.702,286.31c-6.288,5.149-15.335,5.149-21.623,0L0,98.406v294.127c0,9.426,7.641,17.067,17.067,17.067H460.8    c9.426,0,17.067-7.641,17.067-17.067V100.932L249.702,286.31z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g></g></svg></p>
+               <!-- /SVG -->
+               
+               <!-- DATA --><p style="margin-left: 12pt;"><%= emails.email %></p><!-- DATA -->
+            <% } %>
+         <% }); %>
+         </div>
+         <!-- /EMAIL -->
+         
+         <!-- WEB SITE -->
+         <div style="margin-top: 4pt; display: flex; justify-content: left; align-items: center;">
+         <% websities.map(websities => { %>
+            <% if(websities.type === 'portfólio') { %>
+               <!-- SVG -->
+               <p title="Website"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 434.228 434.228" style="enable-background:new 0 0 434.228 434.228;" xml:space="preserve" width="20px" height="20px" class=""><g><g><path d="M228.234,0.293c-1.609-0.195-3.219-0.244-4.837-0.122c-2.089-0.057-4.178-0.163-6.283-0.163   c-2.317,0-4.609,0.106-6.909,0.179c-1.902-0.154-3.796-0.065-5.682,0.219C90.65,6.942,0,101.623,0,217.106   c0,115.271,90.308,209.815,203.889,216.675c1.414,0.252,2.837,0.439,4.259,0.439c0.675,0,1.333-0.122,2.008-0.171   c2.317,0.073,4.625,0.171,6.958,0.171c2.113,0,4.211-0.098,6.308-0.163c0.602,0.041,1.203,0.163,1.813,0.163   c0.886,0,1.756-0.179,2.642-0.276c114.735-5.625,206.352-100.729,206.352-216.838C434.228,101.119,342.806,6.096,228.234,0.293z    M337.986,100.217c-8.454,2.235-19.736,4.519-34.62,6.381c-9.909-18.175-21.069-34.595-31.848-48.625   C296.961,66.695,319.664,81.286,337.986,100.217z M283.655,241.492c-2.024,11.567-5.34,22.898-9.551,33.839   c-16.761-0.959-35.749-1.398-57.274-1.154c-21.508,0.26-40.44,1.073-57.136,2.284c-4.406-11.274-7.877-22.988-9.958-34.969H283.655   z M149.745,192.72c2.13-12.225,5.739-24.183,10.299-35.693c16.607,1.195,35.424,2,56.778,2.26c4.178,0.049,8.25,0.073,12.234,0.073   c16.46,0,31.303-0.431,44.756-1.187c4.349,11.161,7.779,22.727,9.836,34.546C283.647,192.72,149.745,192.72,149.745,192.72z    M216.692,68.207c9.836,11.193,21.338,25.564,32.132,42.139c-9.665,0.228-20.102,0.301-31.409,0.163   c-11.689-0.138-22.435-0.455-32.376-0.902C195.695,93.34,207.002,79.237,216.692,68.207z M161.555,58.404   c-10.388,13.55-21.11,29.304-30.71,46.707c-14.241-1.878-25.207-4.016-33.522-6.072C115.158,80.944,137.097,66.988,161.555,58.404z    M67.199,140.917c10.453,3.723,24.41,7.389,43.033,10.461c-4.487,13.29-7.885,27.117-9.762,41.342H50.747   C53.437,174.325,59.046,156.898,67.199,140.917z M50.747,241.492h49.722c1.845,13.973,5.154,27.564,9.527,40.635   c-18.696,3.097-32.669,6.787-43.106,10.535C58.908,276.851,53.397,259.643,50.747,241.492z M96.754,334.572   c8.307-2.081,19.322-4.251,33.701-6.161c9.706,17.68,20.573,33.685,31.1,47.414C136.828,367.143,114.702,352.951,96.754,334.572z    M216.651,366.07c-9.86-11.193-21.386-25.572-32.197-42.187c10.112-0.455,21.045-0.788,32.961-0.927   c11.502-0.146,22.085-0.065,31.888,0.171C238.354,340.043,226.641,354.698,216.651,366.07z M271.511,376.255   c10.925-14.217,22.24-30.889,32.246-49.357c15.022,1.886,26.361,4.219,34.798,6.478   C320.128,352.618,297.229,367.444,271.511,376.255z M367.891,291.515c-10.681-4.048-24.947-7.942-43.951-11.014   c4.105-12.567,7.21-25.613,8.974-39.009h50.56C380.889,259.212,375.573,276.022,367.891,291.515z M383.482,192.72h-50.56   c-1.805-13.64-4.991-26.922-9.21-39.708c18.931-3.056,33.173-6.926,43.87-10.957C375.435,157.727,380.856,174.756,383.482,192.72z" data-original="#010002" class="active-path" data-old_color="#010002" fill="#FFFFFF"/></g></g></svg></p>
+               <!-- /SVG -->
+               <!-- DATA --><p style="margin-left: 12pt;"><%= websities.site %></p><!-- DATA -->
+            <% } %>
+         <% }); %>
+         </div>
+         <!-- /WEB SITE -->
+
+         <!-- SKYPE -->
+         <div style="margin-top: 4pt; display: flex; justify-content: left; align-items: center;">
+            <!-- SVG -->
+            <p title="Skype"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" id="Bold" enable-background="new 0 0 24 24" height="20px" viewBox="0 0 24 24" width="20px"><g><path d="m23.309 14.547c1.738-7.81-5.104-14.905-13.139-13.543-4.362-2.707-10.17.352-10.17 5.542 0 1.207.333 2.337.912 3.311-1.615 7.828 5.283 14.821 13.311 13.366 5.675 3.001 11.946-2.984 9.086-8.676zm-7.638 4.71c-2.108.867-5.577.872-7.676-.227-2.993-1.596-3.525-5.189-.943-5.189 1.946 0 1.33 2.269 3.295 3.194.902.417 2.841.46 3.968-.3 1.113-.745 1.011-1.917.406-2.477-1.603-1.48-6.19-.892-8.287-3.483-.911-1.124-1.083-3.107.037-4.545 1.952-2.512 7.68-2.665 10.143-.768 2.274 1.76 1.66 4.096-.175 4.096-2.207 0-1.047-2.888-4.61-2.888-2.583 0-3.599 1.837-1.78 2.731 2.466 1.225 8.75.816 8.75 5.603-.005 1.992-1.226 3.477-3.128 4.253z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></svg></p>
+            <!-- /SVG -->
+            <!-- DATA --><p style="margin-left: 12pt;"><%= skype %></p><!-- DATA -->
+         </div>
+         <!-- /SKYPE -->
+
+         <!-- PHONE -->
+         <div style="margin-top: 4pt; display: flex; justify-content: left; align-items: center;">
+         <% phones.map(phones => { %>
+            <% if(phones.type === 'trabalho') { %>
+                  <!-- SVG -->
+                  <p title="Telefone"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 384 384" style="enable-background:new 0 0 384 384;" xml:space="preserve" width="20px" height="20px" class=""><g><g><g><path d="M353.188,252.052c-23.51,0-46.594-3.677-68.469-10.906c-10.719-3.656-23.896-0.302-30.438,6.417l-43.177,32.594    c-50.073-26.729-80.917-57.563-107.281-107.26l31.635-42.052c8.219-8.208,11.167-20.198,7.635-31.448    c-7.26-21.99-10.948-45.063-10.948-68.583C132.146,13.823,118.323,0,101.333,0H30.813C13.823,0,0,13.823,0,30.813    C0,225.563,158.438,384,353.188,384c16.99,0,30.813-13.823,30.813-30.813v-70.323C384,265.875,370.177,252.052,353.188,252.052z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g></g></svg></p>
+                  <!-- /SVG -->
+                  <!-- DATA --><p style="margin-left: 12pt;">+55 11 <%= phones.phone %></p><!-- /DATA -->
+            <% } %>
+         <% }); %>
+         </div>
+         <!-- /PHONE -->
+
+         <!-- ADDRESS -->
+         <div style="margin-top: 4pt; display: flex; justify-content: left; align-items: center;">
+         <% address.map(address => { %>
+            <% if(address.type === 'residencial') { %> 
+               <!-- SVG -->
+               <p title="Endereço"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.864 477.864" style="enable-background:new 0 0 477.864 477.864;" xml:space="preserve" width="20px" height="20px"><g><g><g><path d="M238.932,0C132.061,0,68.265,70.178,68.265,187.733c0,128.239,152.235,278.904,158.72,285.252    c6.636,6.505,17.257,6.505,23.893,0c6.485-6.349,158.72-157.013,158.72-285.252C409.599,70.178,345.804,0,238.932,0z     M238.932,238.933c-47.128,0-85.333-38.205-85.333-85.333s38.205-85.333,85.333-85.333s85.333,38.205,85.333,85.333    C324.209,200.705,286.037,238.877,238.932,238.933z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g></g></svg></p>
+               <!-- /SVG -->
+               <!-- DATA --><p style="margin-left: 12pt;"><%= address.street %>, <%= address.state %>, <%= address.country %></p><!-- DATA -->
+            <% } %>
+         <% }); %>
+         </div>
+         <!-- /ADDRESS -->
+
+         <!-- SOCIAL MEDIAS -->
+         <div style="margin-top: 16pt; display: flex; justify-content: left; align-items: center;">
+            <!-- LINKEDIN -->
+            <% scmedia.map(scmedia => { %>
+            <% if(scmedia.name === 'linkedin' && scmedia.nick !== '') { %>
+                  <a href="http://<%= scmedia.nick %>"><p style="margin-right: 4pt;" title="Linkedin"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="54px" height="54px" class=""><g><g><circle style="fill:#007AB9;" cx="56.098" cy="56.097" r="56.098" data-original="#007AB9" class=""/><g><path style="fill:#F1F2F2;" d="M89.616,60.611v23.128H76.207V62.161c0-5.418-1.936-9.118-6.791-9.118    c-3.705,0-5.906,2.491-6.878,4.903c-0.353,0.862-0.444,2.059-0.444,3.268v22.524H48.684c0,0,0.18-36.546,0-40.329h13.411v5.715    c-0.027,0.045-0.065,0.089-0.089,0.132h0.089v-0.132c1.782-2.742,4.96-6.662,12.085-6.662    C83.002,42.462,89.616,48.226,89.616,60.611L89.616,60.611z M34.656,23.969c-4.587,0-7.588,3.011-7.588,6.967    c0,3.872,2.914,6.97,7.412,6.97h0.087c4.677,0,7.585-3.098,7.585-6.97C42.063,26.98,39.244,23.969,34.656,23.969L34.656,23.969z     M27.865,83.739H41.27V43.409H27.865V83.739z" data-original="#F1F2F2" class="active-path"/></g></g></g></svg></p></a>
+            <% } %>
+            <!-- LINKEDIN -->
+
+            <!-- FACEBOOK -->
+            <% if(scmedia.name === 'facebook' && scmedia.nick !== '') { %>
+               <a href="http://<%= scmedia.nick %>"><p style="margin-right: 4pt;" title="Facebook"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196;" xml:space="preserve" width="54px" height="54px" class="hovered-paths"><g><g><circle style="fill:#3B5998;" cx="56.098" cy="56.098" r="56.098" data-original="#3B5998" class="hovered-path"/><path style="fill:#FFFFFF" d="M70.201,58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34   c0-5.964,2.833-15.303,15.301-15.303L71.56,21.81v12.51h-8.151c-1.337,0-3.217,0.668-3.217,3.513v7.585h11.334L70.201,58.294z" data-original="#FFFFFF" class="active-path"/></g></g></svg></p></a>
+            <% } %>
+            <!-- FACEBOOK -->
+
+            <!-- TWITTER -->
+            <% if(scmedia.name === 'twitter' && scmedia.nick !== '') { %>
+               <a href="http://<%= scmedia.nick %>"><p style="margin-right: 4pt;" title="Twitter"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 112.197 112.197" style="enable-background:new 0 0 112.197 112.197;" xml:space="preserve" width="54px" height="54px" class=""><g><g><circle style="fill:#55ACEE;" cx="56.099" cy="56.098" r="56.098" data-original="#55ACEE" class=""/><g><path style="fill:#F1F2F2;" d="M90.461,40.316c-2.404,1.066-4.99,1.787-7.702,2.109c2.769-1.659,4.894-4.284,5.897-7.417    c-2.591,1.537-5.462,2.652-8.515,3.253c-2.446-2.605-5.931-4.233-9.79-4.233c-7.404,0-13.409,6.005-13.409,13.409    c0,1.051,0.119,2.074,0.349,3.056c-11.144-0.559-21.025-5.897-27.639-14.012c-1.154,1.98-1.816,4.285-1.816,6.742    c0,4.651,2.369,8.757,5.965,11.161c-2.197-0.069-4.266-0.672-6.073-1.679c-0.001,0.057-0.001,0.114-0.001,0.17    c0,6.497,4.624,11.916,10.757,13.147c-1.124,0.308-2.311,0.471-3.532,0.471c-0.866,0-1.705-0.083-2.523-0.239    c1.706,5.326,6.657,9.203,12.526,9.312c-4.59,3.597-10.371,5.74-16.655,5.74c-1.08,0-2.15-0.063-3.197-0.188    c5.931,3.806,12.981,6.025,20.553,6.025c24.664,0,38.152-20.432,38.152-38.153c0-0.581-0.013-1.16-0.039-1.734    C86.391,45.366,88.664,43.005,90.461,40.316L90.461,40.316z" data-original="#F1F2F2" class="active-path"/></g></g></g></svg></p></a>
+            <% } %>
+            <!-- TWITER -->
+
+            <!-- INSTAGRAM -->
+            <% if(scmedia.name === 'instagram' && scmedia.nick !== '') { %>
+               <%= scmedia.nick %>
+               <a href="http://<%= scmedia.nick %>"><p style="margin-right: 4pt;" title="Instagram"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 89.758 89.758" style="enable-background:new 0 0 89.758 89.758;" xml:space="preserve" width="54px" height="54px" class=""><g><g><path d="M58.255,23.88H31.503c-4.27,0-7.744,3.474-7.744,7.744v26.752c0,4.27,3.474,7.745,7.744,7.745   h26.752c4.27,0,7.745-3.474,7.745-7.745V31.624C66,27.354,62.526,23.88,58.255,23.88z M44.879,58.906   c-7.667,0-13.905-6.238-13.905-13.906c0-7.667,6.238-13.905,13.905-13.905c7.668,0,13.906,6.238,13.906,13.905   C58.785,52.667,52.546,58.906,44.879,58.906z M59.232,33.97c-1.815,0-3.291-1.476-3.291-3.29c0-1.814,1.476-3.29,3.291-3.29   c1.814,0,3.29,1.476,3.29,3.29C62.522,32.494,61.046,33.97,59.232,33.97z" data-original="#B462FF" class="active-path" fill="#B462FF"/><path d="M44.879,36.971c-4.426,0-8.03,3.602-8.03,8.028c0,4.428,3.604,8.031,8.03,8.031   c4.428,0,8.029-3.603,8.029-8.031C52.908,40.574,49.306,36.971,44.879,36.971z" data-original="#B462FF" class="active-path" fill="#B462FF"/><path d="M44.879,0C20.094,0,0,20.094,0,44.879c0,24.785,20.094,44.879,44.879,44.879   c24.785,0,44.879-20.094,44.879-44.879C89.758,20.094,69.664,0,44.879,0z M71.875,58.376c0,7.511-6.109,13.62-13.62,13.62H31.503   c-7.51,0-13.62-6.109-13.62-13.62V31.624c0-7.51,6.11-13.62,13.62-13.62h26.752c7.511,0,13.62,6.11,13.62,13.62V58.376z" data-original="#B462FF" class="active-path" fill="#B462FF"/></g></g></svg></p></a>
+            <% } %>
+            <!-- INSTAGRAM -->
+
+            <!-- PINTEREST -->
+            <% if(scmedia.name === 'pinterest' && scmedia.nick !== '') { %>
+               <a href="http://<%= scmedia.nick%>"><p style="margin-right: 4pt;" title="Pinterest"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 112.198 112.198" style="enable-background:new 0 0 112.198 112.198;" xml:space="preserve" width="54px" height="54px" class=""><g><g><circle style="fill:#CB2027;" cx="56.099" cy="56.1" r="56.098" data-original="#CB2027" class=""/><g><path style="fill:#F1F2F2" d="M60.627,75.122c-4.241-0.328-6.023-2.431-9.349-4.45c-1.828,9.591-4.062,18.785-10.679,23.588    c-2.045-14.496,2.998-25.384,5.34-36.941c-3.992-6.72,0.48-20.246,8.9-16.913c10.363,4.098-8.972,24.987,4.008,27.596    c13.551,2.724,19.083-23.513,10.679-32.047c-12.142-12.321-35.343-0.28-32.49,17.358c0.695,4.312,5.151,5.621,1.78,11.571    c-7.771-1.721-10.089-7.85-9.791-16.021c0.481-13.375,12.018-22.74,23.59-24.036c14.635-1.638,28.371,5.374,30.267,19.14    C85.015,59.504,76.275,76.33,60.627,75.122L60.627,75.122z" data-original="#F1F2F2" class="active-path" data-old_color="#F1F2F2"/></g></g></g></svg></p></a>
+            <% } %>
+            <!-- PINTEREST -->
+
+            <!-- DEVIANTART -->
+            <% if(scmedia.name === "deviantart" && scmedia.nick !== '') { %>
+               <a href="http://<%= scmedia.nick %>"><p style="margin-right: 4pt;" title="Deviantart"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 112.198 112.198" style="enable-background:new 0 0 112.198 112.198;" xml:space="preserve" width="54px" height="54px" class=""><g><g><circle style="fill:#04CC47;" cx="56.099" cy="56.099" r="56.098" data-original="#04CC47" class=""/><polygon id="da_1_" style="fill:#FFFFFF;" points="76.313,35.591 63.781,59.612 76.313,59.612 76.313,75.484 55.524,75.484    48.737,88.497 35.885,88.497 35.885,77.916 49.004,52.772 35.885,52.772 35.885,36.74 57.368,36.74 64.182,23.701 76.313,23.701     " data-original="#FFFFFF" class="active-path"/></g></g></svg></p></a>
+            <% } %>
+            <!-- DEVIANTART -->
+
+            <!-- GITHUB -->
+            <% if(scmedia.name === 'github' && scmedia.nick !== '') { %>
+               <a href="http://<%= scmedia.nick %>"><p style="margin-right: 4pt;" title="GitHub"><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="54px" height="54px"><g><path d="M255.968,5.329C114.624,5.329,0,120.401,0,262.353c0,113.536,73.344,209.856,175.104,243.872  c12.8,2.368,17.472-5.568,17.472-12.384c0-6.112-0.224-22.272-0.352-43.712c-71.2,15.52-86.24-34.464-86.24-34.464  c-11.616-29.696-28.416-37.6-28.416-37.6c-23.264-15.936,1.728-15.616,1.728-15.616c25.696,1.824,39.2,26.496,39.2,26.496  c22.848,39.264,59.936,27.936,74.528,21.344c2.304-16.608,8.928-27.936,16.256-34.368c-56.832-6.496-116.608-28.544-116.608-127.008  c0-28.064,9.984-51.008,26.368-68.992c-2.656-6.496-11.424-32.64,2.496-68c0,0,21.504-6.912,70.4,26.336  c20.416-5.696,42.304-8.544,64.096-8.64c21.728,0.128,43.648,2.944,64.096,8.672c48.864-33.248,70.336-26.336,70.336-26.336  c13.952,35.392,5.184,61.504,2.56,68c16.416,17.984,26.304,40.928,26.304,68.992c0,98.72-59.84,120.448-116.864,126.816  c9.184,7.936,17.376,23.616,17.376,47.584c0,34.368-0.32,62.08-0.32,70.496c0,6.88,4.608,14.88,17.6,12.352  C438.72,472.145,512,375.857,512,262.353C512,120.401,397.376,5.329,255.968,5.329z" data-original="#5C6BC0" class="active-path" data-old_color="#5C6BC0" fill="#5C6BC0"/></g></svg></p></a>
+            <% } %>
+            <% }); %>
+            <!-- GITHUB -->
+         </div>
+         <!-- SOCIAL MEDIAS -->
+
+      </div>
+      <!-- DATA USER -->
+
+      <!-- PHOTO -->
+      <div class="photo" style="width:55%;">
+      </div>
+      <!-- PHOTO -->
+   </header>
+   
+   <!-- IMPRIMIR -->
+   <div style="
+      position: absolute; 
+      width:250px; 
+      left:calc(50% - 125px); 
+      top:40px;
+      background:rgba(30, 30, 30, 0.6);
+      border-bottom:2px solid green;
+      box-shadow:0 4px 4px rgb(30, 30, 30);
+   ">
+      <a href="/print" title="Imprimir" style="
+         margin-top: 4pt;
+         display: flex; 
+         justify-content: center; 
+         align-items: center;
+         font-size: 11pt;
+         color: rgb(150, 150, 150);
+      ">
+      <!-- SVG -->
+      <p><?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.867 477.867" style="enable-background:new 0 0 477.867 477.867;" xml:space="preserve" width="32px" height="32px" class=""><g><g><g><path d="M290.133,324.267h-102.4c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h102.4    c9.426,0,17.067-7.641,17.067-17.067S299.559,324.267,290.133,324.267z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g><g><g><path d="M290.133,375.467h-102.4c-9.426,0-17.067,7.641-17.067,17.067s7.641,17.067,17.067,17.067h102.4    c9.426,0,17.067-7.641,17.067-17.067S299.559,375.467,290.133,375.467z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g><g><g><path d="M460.8,119.467h-85.333v-102.4C375.467,7.641,367.826,0,358.4,0H119.467C110.041,0,102.4,7.641,102.4,17.067v102.4H17.067    C7.641,119.467,0,127.108,0,136.533V358.4c0,9.426,7.641,17.067,17.067,17.067H102.4V460.8c0,9.426,7.641,17.067,17.067,17.067    H358.4c9.426,0,17.067-7.641,17.067-17.067v-85.333H460.8c9.426,0,17.067-7.641,17.067-17.067V136.533    C477.867,127.108,470.226,119.467,460.8,119.467z M136.533,34.133h204.8v85.333h-204.8V34.133z M392.533,290.133h-51.2v153.6    h-204.8v-153.6h-51.2c-9.426,0-17.067-7.641-17.067-17.067S75.908,256,85.333,256h307.2c9.426,0,17.067,7.641,17.067,17.067    S401.959,290.133,392.533,290.133z M409.6,221.867h-17.067c-9.426,0-17.067-7.641-17.067-17.067s7.641-17.067,17.067-17.067H409.6    c9.426,0,17.067,7.641,17.067,17.067S419.026,221.867,409.6,221.867z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/></g></g></g></svg></p>
+      <!-- SVG -->
+      <p style="margin-left: 12pt;">imprimir currículo</p>
+      </a>
+   </div><!-- IMPRIMIR -->
+   
+   <section>
+   </section>
+
+   <footer>
+      <div class="content">meu-curriculo.com.br | 1.0.2v | 22 de junho de 2020 | Mauricio Mityo Hidani</div>
+   </footer>
+ 
+</body>
+</html>

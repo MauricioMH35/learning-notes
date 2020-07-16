@@ -1,0 +1,71 @@
+* {
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-size: 12pt;
+   color: rgb(30, 30, 30);
+}
+
+body {
+   background:transparent !important;
+   color:#000 !important;
+   text-shadow:none !important;
+   filter:none !important;
+   -ms-filter:none !important;
+
+   line-height: 1.4em;
+}
+
+@page {
+   margin: 1.5cm;
+}
+
+nav, footer, video, audio, object, embed { 
+   display:none; 
+}
+
+img {
+   max-width: 100%;
+}
+
+aside {
+   display:block;
+   page-break-before: always;
+}
+
+.wrap { 
+   width: 100%; 
+   margin: 0; 
+   float: none !important; 
+}
+
+q:after {
+   content: " (" attr(cite) ")";
+}
+
+a, a:visited {
+   text-decoration: underline;
+}
+
+a:link:after, a:visited:after {
+   content: " (" attr(href) ") ";
+}
+
+a:after, a[href^="javascript:"]:after, a[href^="#"]:after { 
+   content: ""; 
+}
+
+p a {
+   word-wrap: break-word;
+}
+
+p {
+   widows: 3;
+   orphans: 3;
+}
+
+.page-break { 
+   margin-top: 1.5cm;
+   page-break-before: always; 
+}
+.no-print { 
+   display:none; 
+}
