@@ -11,5 +11,5 @@
 
 ### Conclusão
    A construção dessa aplicação foi feita para fins educacionais, mas percebo que pode ser usada como uma forma de demonstração rápida e com um fácil acesso via internet de um currículo que pode vir em mãos de forma simples e de qualquer lugar.
-   Currículos impressos não são muito utilizados hoje, principalmente em grandes empresas, que vem até aos candidatos por meio de redes sociais como o [Linkedin](https://www.linkedin.com/), ou agências de trabalho. No entanto, as empresas ainda aceitam currículos impressos. além de ser muito difícil desse geito bem tradicional se perder tão rápido.
-   Porem uma página que demonstre seu currículo construida ou implementada por você é bem interessante e pode contar muito seja em qualquer área que você trabalhe.
+   Currículos impressos não são muito utilizados hoje, principalmente em grandes empresas, que vem até aos candidatos por meio de redes sociais como o [Linkedin](https://www.linkedin.com/), ou agências de trabalho. No entanto, as empresas ainda aceitam currículos impressos, além de ser muito difícil desse geito bem tradicional se perder tão rápido.
+   Uma página que demonstre seu currículo construida ou implementada por você é bem interessante e pode contar muito seja em qualquer área que você trabalhe.
